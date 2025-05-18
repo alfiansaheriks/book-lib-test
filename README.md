@@ -55,11 +55,9 @@ RESTful API sederhana untuk manajemen buku dan autentikasi pengguna, dibuat meng
 
 ## 🧪 Testing
 
-Project ini hanya menguji endpoint berikut:
-
 ### ✅ Diuji:
 - 🔐 Register & Login
-- ♻️ Refresh Token
+- 👤 Create Author
 - 📘 CRUD Book
 
 ### Jalankan test:
@@ -100,7 +98,12 @@ tests/
 ├── book.test.js
 ```
 
+---
 
+## POSTMAN Collection
+[Postman](https://www.postman.com/solar-rocket-29409/my-workspace/overview)
+
+---
 
 ## 👤 Author
 
