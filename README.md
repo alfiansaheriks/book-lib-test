@@ -80,7 +80,7 @@ npm run test
 | PUT    | `/api/book/:id`           | Update buku                   |
 | DELETE | `/api/book/:id`           | Hapus buku                    |
 | POST   | `/api/author`             | Tambah author                 |
-| GET    | `/api/author`             | List author (tanpa test)      |
+| GET    | `/api/author`             | List author                   |
 
 ---
 
