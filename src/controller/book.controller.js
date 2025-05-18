@@ -25,6 +25,32 @@ const getBooks = async (req, res) => {
     }
 }
 
+const getBook = async (req, res) => {
+    const { id } = req.params;
+    console.log('Hit GET /book/:id', req.params.id);
+    try {
+        const book = await Book.findById(id).populate('author', 'name');
+        if (!book) {
+            return res.status(404).json({
+                success: false,
+                message: 'Book not found',
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: 'Book retrieved successfully',
+            data: book,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Internal Server Error',
+            error: error.message,
+        });
+    }
+}
+
+
 const createBook = async (req, res) => {
     const { title, publishedYear, author, genre } = req.body;
     try {
@@ -95,6 +121,7 @@ const deleteBook = async (req, res) => {
 
 module.exports = {
     getBooks,
+    getBook,
     createBook,
     updateBook,
     deleteBook

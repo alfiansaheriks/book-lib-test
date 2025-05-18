@@ -4,6 +4,7 @@
   "description": "Backend Test for Beehive Drones",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "./node_modules/.bin/jest",
     "seed:authors": "node ./src/seeder/authorSeeder.js"
   },

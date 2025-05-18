@@ -4,7 +4,7 @@ const bookController = require('../controller/book.controller');
 const auth = require('../middleware/auth.middleware');
 
 router.get('/', bookController.getBooks);
-// router.get('/:id', bookController.getBook);
+router.get('/detail/:id', bookController.getBook);
 router.post('/', auth, bookController.createBook);
 router.put('/:id', auth, bookController.updateBook);
 router.delete('/:id', auth, bookController.deleteBook);

@@ -77,6 +77,15 @@ describe('Book API', () => {
         expect(response.body.data.length).toBeGreaterThan(0);
     })
 
+    test('Should fetch a book by ID', async () => {
+        const response = await request(app)
+            .get(`/api/book/detail/${bookId}`)
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body.success).toBe(true);
+        expect(response.body.data._id).toBe(bookId);
+    })
+
     test('Should update a book', async () => {
         const response = await request(app)
             .put(`/api/book/${bookId}`)
